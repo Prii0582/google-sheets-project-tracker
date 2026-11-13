@@ -4,12 +4,6 @@ An Apps Script that turns a normal Google Sheet into a project and payment track
 
 The data here is dummy data. I built a similar tracker at work; I can't share that, so I rebuilt the idea with made-up data.
 
-## Sample output
-
-![Portfolio Summary tab](docs/preview.png)
-
-Sample report generated from the dummy data. This picture is an HTML mock-up of the "Portfolio Summary" tab, made from `sample_data/projects_sample.csv`.
-
 ## Why I made this
 
 Small teams often track projects in a shared sheet that gets messy over time. Status is typed in different ways, dates are in different formats, nobody notices overdue tasks, and payments that are due are not followed up. Then someone spends hours every week making a status update by hand.
@@ -45,5 +39,4 @@ The weekly status update becomes one click, or runs by itself every morning.
 
 - Tracker > Refresh summary every morning rebuilds the summary daily.
 - To start from the CSV instead: run `setupTracker`, clear the sample rows, then File > Import `sample_data/projects_sample.csv` into the Projects tab ("Replace data at selected cell" on A1) and rebuild the summary.
-- `python tools/render_preview.py` makes the preview picture again (needs Python 3 and Chrome).
 - Uses FILTER, SORT, COUNTIFS and SUMIFS formulas, conditional formatting and time-driven triggers.
