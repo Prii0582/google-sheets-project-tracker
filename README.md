@@ -1,72 +1,49 @@
-# Google Sheets Project & Payment Tracker
+# Google Sheets Project and Payment Tracker
 
-**Turns a plain Google Sheet into a project and payment tracker - one data tab in, a live portfolio summary and per-project view out, rebuilt with one click.**
+An Apps Script that turns a normal Google Sheet into a project and payment tracker. You enter data in one tab, and it builds a portfolio summary and a per-project view from it.
 
-![Illustrative preview of the Portfolio Summary tab](docs/preview.png)
+The data here is dummy data. I built a similar tracker at work; I can't share that, so I rebuilt the idea with made-up data.
 
-*Illustrative preview: an HTML mock-up of the "Portfolio Summary" tab, drawn from the fictional sample data in this repo.*
+## Sample output
 
----
+![Portfolio Summary tab](docs/preview.png)
 
-## Problem
+Sample report generated from the dummy data. This picture is an HTML mock-up of the "Portfolio Summary" tab, made from `sample_data/projects_sample.csv`.
 
-Small delivery teams often track projects in a shared spreadsheet that slowly turns messy: free-typed statuses, dates in different formats, overdue tasks nobody notices, and payments that are due but not chased. Managers then spend hours each week building a status update by hand.
+## Why I made this
 
-## What I built
+Small teams often track projects in a shared sheet that gets messy over time. Status is typed in different ways, dates are in different formats, nobody notices overdue tasks, and payments that are due are not followed up. Then someone spends hours every week making a status update by hand.
 
-A Google Apps Script (`Code.gs`) that sets up and maintains the whole tracker inside Google Sheets - no extra software or paid tools.
+## What it does
 
-- **One simple data tab - "Projects".** Each row is one item of a project: a **Deliverable**, a **Blocker** or a **Payment**, with client, owner, start and due dates, status, amount and paid-on date.
-- **Clean data entry.** Dropdowns for type, status and owner; date checks on date columns; consistent number and date formats.
-- **Overdue items highlighted automatically** in red (past due date and not done / not paid).
-- **"Portfolio Summary" tab**, built by the script:
-  - headline tiles: active projects, open items, overdue items, open blockers, payments pending, amount pending
+`Code.gs` sets up and maintains the tracker inside Google Sheets. No other software is needed.
+
+- One data tab, "Projects". Each row is a Deliverable, a Blocker or a Payment, with client, owner, start and due dates, status, amount and paid-on date.
+- Dropdowns for type, status and owner, date checks on date columns, and fixed number and date formats.
+- Overdue items (past due date and not done or not paid) turn red automatically.
+- A "Portfolio Summary" tab with:
+  - counts of active projects, open items, overdue items, open blockers, payments pending and amount pending
   - item counts by status and type
-  - progress per project (deliverables done, % complete, open blockers, overdue count, payments pending, next due date)
-  - a list of every overdue item with days late
-  - a list of payments not yet received
-- **"Project View" tab** - pick a project from a dropdown and instantly see its deliverables, blockers and payments (live formulas).
-- **Custom menu "Tracker"** - *Rebuild summary*, *Rebuild project view*, *Add sample data*, and an optional daily auto-refresh.
+  - progress for each project (deliverables done, % complete, open blockers, overdue, payments pending, next due date)
+  - all overdue items with days late
+  - payments not yet received
+- A "Project View" tab. Pick a project from the dropdown and see its deliverables, blockers and payments.
+- A "Tracker" menu with Rebuild summary, Rebuild project view, Add sample data and an optional daily auto-refresh.
 
-## Result
+The weekly status update becomes one click, or runs by itself every morning.
 
-- A weekly status update that used to be compiled by hand is now **one click** (or fully automatic every morning).
-- Overdue work and unpaid milestones are **visible at a glance**, so follow-ups happen earlier.
-- Everyone enters data the same way, so the numbers can be trusted.
-- Anyone on the team can use it - it is just a Google Sheet.
+## How to run
 
-*Based on work in my current role; this version uses synthetic data.*
+1. Create a blank Google Sheet.
+2. Go to Extensions > Apps Script.
+3. Delete the existing code, paste everything from `Code.gs` and save.
+4. Choose `setupTracker` in the function dropdown and click Run. Allow access to the sheet when Google asks.
+5. Go back to the sheet. You will see the Projects, Portfolio Summary and Project View tabs with sample rows, and a Tracker menu (refresh the page if the menu doesn't show).
+6. Replace the sample rows with your own data and use Tracker > Rebuild summary.
 
-## Skills shown
+## Notes
 
-- **Google Sheets & Apps Script (JavaScript)** - automation, custom menus, time-driven triggers
-- **MIS reporting** - designing a portfolio summary that managers actually read
-- **Data quality** - data validation dropdowns, date checks, consistent formats
-- **Spreadsheet design** - conditional formatting, FILTER / SORT / COUNTIFS / SUMIFS formulas, dashboard layout
-- **Process thinking** - turning a manual weekly routine into a repeatable tool
-
-## What's in this repo
-
-| File | What it is |
-|---|---|
-| `Code.gs` | The complete Apps Script - paste this into your sheet |
-| `sample_data/projects_sample.csv` | Fictional example rows (Client A - Client E) |
-| `docs/preview.png` | Illustrative preview of the summary tab |
-| `tools/render_preview.py` | Rebuilds the preview image from the sample CSV (Python + Chrome) |
-
----
-
-## How to set it up (about 5 minutes)
-
-1. Open [Google Sheets](https://sheets.google.com) and create a **blank spreadsheet**.
-2. In the menu choose **Extensions &rarr; Apps Script**.
-3. Delete the code that is already there, paste in everything from **`Code.gs`**, and click **Save**.
-4. In the function dropdown at the top choose **`setupTracker`** and click **Run**. Google will ask you to approve access to *this* spreadsheet - click through and allow.
-5. Go back to the sheet. You will now have the **Projects**, **Portfolio Summary** and **Project View** tabs, filled with sample rows, and a new **Tracker** menu (refresh the page if the menu does not appear).
-6. Replace the sample rows with your own projects, then use **Tracker &rarr; Rebuild summary**.
-
-Optional: **Tracker &rarr; Refresh summary every morning** rebuilds the summary automatically each day.
-
-Prefer to start from the CSV? Run `setupTracker` first, clear the sample rows, then **File &rarr; Import** `sample_data/projects_sample.csv` into the *Projects* tab (choose "Replace data at selected cell" on cell A1) and rebuild the summary.
-
-To regenerate the preview image: `python tools/render_preview.py` (needs Python 3 and Google Chrome).
+- Tracker > Refresh summary every morning rebuilds the summary daily.
+- To start from the CSV instead: run `setupTracker`, clear the sample rows, then File > Import `sample_data/projects_sample.csv` into the Projects tab ("Replace data at selected cell" on A1) and rebuild the summary.
+- `python tools/render_preview.py` makes the preview picture again (needs Python 3 and Chrome).
+- Uses FILTER, SORT, COUNTIFS and SUMIFS formulas, conditional formatting and time-driven triggers.

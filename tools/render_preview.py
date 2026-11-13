@@ -1,5 +1,5 @@
 """
-Builds docs/preview.png - an ILLUSTRATIVE mock-up of the "Portfolio Summary" tab.
+Builds docs/preview.png, a mock-up of the "Portfolio Summary" tab.
 
 Google Sheets screenshots can't be generated automatically, so this script
 re-creates the same summary logic as Code.gs in Python, using
@@ -177,7 +177,7 @@ tr.kpi td {{ height:40px; }}
 .tabs .on {{ background:#E1F1EF; color:var(--teal); font-weight:bold; border-bottom:3px solid var(--teal); }}
 .tabs .navy {{ border-bottom:3px solid var(--navy); }}
 </style></head><body>
-<div class="caption"><b>Illustrative preview</b><span>HTML mock-up of the &ldquo;Portfolio Summary&rdquo; tab built by Code.gs &middot; fictional sample data</span></div>
+<div class="caption"><b>Sample data</b><span>&ldquo;Portfolio Summary&rdquo; tab built by Code.gs &middot; made-up projects and clients</span></div>
 <div class="chrome">
   <div class="doc"><div class="logo"></div><div class="docname">Project &amp; Payment Tracker (sample)</div></div>
   <div class="menus"><span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Data</span><span>Tools</span><span>Extensions</span><span>Help</span><span class="tracker">Tracker &#9662;</span></div>
