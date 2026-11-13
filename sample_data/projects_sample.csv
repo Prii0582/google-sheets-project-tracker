@@ -1,0 +1,25 @@
+Project,Client,Owner,Type,Item,Start,Due,Status,Amount,Paid On,Notes
+Website Revamp,Client A,Owner 1,Deliverable,Design mock-ups,2026-09-03,2026-09-23,Done,,,
+Website Revamp,Client A,Owner 1,Deliverable,Build & test pages,2026-09-23,2026-10-28,In Progress,,,Two pages left
+Website Revamp,Client A,Owner 1,Deliverable,Go-live,2026-10-28,2026-11-12,Not Started,,,
+Website Revamp,Client A,Owner 1,Blocker,Waiting for final content,2026-10-21,2026-10-30,Blocked,,,Client to send copy
+Website Revamp,Client A,Owner 1,Payment,Milestone 1 - design sign-off,2026-09-23,2026-10-03,Done,40000,2026-10-05,
+Website Revamp,Client A,Owner 1,Payment,Milestone 2 - go-live,2026-11-12,2026-11-27,Not Started,60000,,
+Data Migration,Client B,Owner 2,Deliverable,Source data audit,2026-09-13,2026-09-28,Done,,,
+Data Migration,Client B,Owner 2,Deliverable,Migrate master data,2026-09-28,2026-10-23,In Progress,,,
+Data Migration,Client B,Owner 2,Deliverable,User acceptance testing,2026-10-23,2026-11-16,Not Started,,,
+Data Migration,Client B,Owner 2,Blocker,Access to legacy system,2026-10-13,2026-10-25,In Progress,,,IT ticket raised
+Data Migration,Client B,Owner 2,Payment,Advance,2026-09-13,2026-09-18,Done,25000,2026-09-19,
+Data Migration,Client B,Owner 2,Payment,On completion,2026-10-23,2026-10-31,In Progress,50000,,Invoice sent
+Reporting Dashboard,Client C,Owner 3,Deliverable,KPI definitions agreed,2026-10-03,2026-10-13,Done,,,
+Reporting Dashboard,Client C,Owner 3,Deliverable,Dashboard v1,2026-10-13,2026-11-07,In Progress,,,
+Reporting Dashboard,Client C,Owner 3,Deliverable,Training session,2026-11-07,2026-11-22,Not Started,,,
+Reporting Dashboard,Client C,Owner 3,Payment,Phase 1,2026-10-13,2026-10-27,In Progress,30000,,Follow up with accounts
+Mobile App Pilot,Client D,Owner 1,Deliverable,Requirements workshop,2026-10-18,2026-10-26,Done,,,
+Mobile App Pilot,Client D,Owner 1,Deliverable,Prototype,2026-10-26,2026-11-23,In Progress,,,
+Mobile App Pilot,Client D,Owner 1,Blocker,Device list not confirmed,2026-10-28,2026-11-05,Not Started,,,
+Mobile App Pilot,Client D,Owner 1,Payment,Pilot fee,2026-11-02,2026-12-02,Not Started,20000,,
+Process Automation,Client E,Owner 2,Deliverable,Process mapping,2026-08-04,2026-08-24,Done,,,
+Process Automation,Client E,Owner 2,Deliverable,Automation scripts,2026-08-24,2026-10-03,Done,,,
+Process Automation,Client E,Owner 2,Deliverable,Handover & documentation,2026-10-03,2026-10-18,Done,,,
+Process Automation,Client E,Owner 2,Payment,Final payment,2026-10-18,2026-10-28,Done,35000,2026-10-29,
